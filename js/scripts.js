@@ -2,6 +2,7 @@
 function Account(name, initialAmount){
   this.name =name;
   this.amount = initialAmount;
+  this.accountNumber = Math.floor(Math.random()*1000000);
 }
 
 Account.prototype.deposit =function(deposit){
@@ -26,11 +27,6 @@ Account.prototype.toString = function(amount){
   return outnum;
 }
 
-var randAccount = function(){
-  var accountNumber = Math.floor(Math.random()*1000000);
-return accountNumber;
-
-}
 
 //front-end
 $(document).ready(function(){
@@ -40,12 +36,11 @@ $(document).ready(function(){
     var nameInput = $("#name").val();
     var initialInput = parseInt($("#initial").val());
     myAccount = new Account(nameInput,initialInput);
-    var accountNumber = randAccount();
     $("#exchange").show();
     $("#check").show();
     $("#create").attr("disabled",true);
     $("#account-info").text(nameInput);
-    $("#number").text(accountNumber);
+    $("#number").text(myAccount.accountNumber);
   });
 
   $("form#exchange").submit(function(event){
