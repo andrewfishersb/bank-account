@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Bank Account</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Mogadishu Union Bank</h1>
+      <h2>Where your money is ours</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form id="new-account">
+            <div class="form-group">
+              <label for="Name">Enter Your Name: </label>
+              <input type="text" placeholder="Add Your Name" id="name" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="initial">Enter Your Initial Deposit: </label>
+              <input type="number" min=10000 placeholder="Give us your money" id="initial" class = "form-control">
+            </div>
+            <button type="submit" class="btn btn-danger">Give it to Us</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <form id="exchange">
+            <div class="form-group">
+              <label for="deposit">Enter Deposit Amount:</label>
+              <input type="number" class="form-control" placeholder="Deposit Amount">
+            </div>
+            <div class="form-group">
+              <label for="withdrawal">Enter Withdrawal Amount:</label>
+              <input type="number" class="form-control" placeholder="Withdrawal Amount">
+            </div>
+            <button type="submit" class="btn btn-warning" name="button">Please Give Us More</button>
+          </form>
+        </div>
+
+
+      </div>
+      <div id="balance">
+        <h4>Current Balance:</h4>
+        <span id="balance-output"></span>
+      </div>
+
+
+    </div>
+  </body>
+</html>
