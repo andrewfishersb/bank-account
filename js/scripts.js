@@ -26,6 +26,12 @@ Account.prototype.toString = function(amount){
   return outnum;
 }
 
+var randAccount = function(){
+  var accountNumber = Math.floor(Math.random()*1000000);
+return accountNumber;
+
+}
+
 //front-end
 $(document).ready(function(){
   var myAccount;
@@ -34,10 +40,12 @@ $(document).ready(function(){
     var nameInput = $("#name").val();
     var initialInput = parseInt($("#initial").val());
     myAccount = new Account(nameInput,initialInput);
-    $("#balance-output").text(myAccount.amount);
+    var accountNumber = randAccount();
     $("#exchange").show();
-    $("#new-account").hide();
-
+    $("#check").show();
+    $("#create").attr("disabled",true);
+    $("#account-info").text(nameInput);
+    $("#number").text(accountNumber);
   });
 
   $("form#exchange").submit(function(event){
@@ -56,11 +64,21 @@ $(document).ready(function(){
     }
     myAccount.deposit(depositInput);
     myAccount.withdraw(withdrawInput);
-    var balanceOutput = myAccount.toString(myAccount.amount);
-    $("#balance-output").text(balanceOutput);
-
     $("input#deposit").val("");
     $("input#withdraw").val("");
+
+  });
+
+  $("#check").click(function(){
+    if(myAccount.amount>1000000){
+      $("body").css("background-image","url(img/giphy.gif)");
+      $("body").css("color","white");
+
+    }
+    var balanceOutput = myAccount.toString(myAccount.amount);
+    $("#balance-output").text(balanceOutput);
+    $("#balance").show();
+    $("#yourinfo").show();
 
   });
 

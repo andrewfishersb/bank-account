@@ -1,3 +1,42 @@
+body{
+  font-family:'Nothing You Could Do','cursive';
+background-image: url(../img/pirate.jpg);
+}
+
+p{
+  font-size: 20px;
+}
+#row2{
+  margin-top: 3%;
+}
+
 #exchange {
   display: none;
 }
+#yourinfo{
+    display: none;
+}
+
+#balance{
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+.jumbotron{
+  background-image: url(../img/somali.jpg);
+  background-repeat: no-repeat;
+  background-position:top;
+  background-size: cover;
+  color: white;
+  text-shadow: 2px 2px black;
+
+}
+
+/*#ducktales {
+  text-align: center;
+  display: none;
+  background-image: url(../img/giphy.gif);
+}*/

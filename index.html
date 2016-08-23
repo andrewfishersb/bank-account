@@ -3,14 +3,18 @@
   <head>
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
     <script src="js/jquery-3.1.0.js"></script>
     <script src="js/scripts.js"></script>
     <title>Bank Account</title>
   </head>
   <body>
     <div class="container">
-      <h1>Welcome to Mogadishu Union Bank</h1>
-      <h2>Where your money is ours</h2>
+      <div class="jumbotron">
+        <h1>Welcome to Mogadishu Union Bank</h1>
+        <h2>Where your money is ours! </h2>
+      </div>
+
       <div class="row">
         <div class="col-md-6">
           <form id="new-account">
@@ -20,31 +24,49 @@
             </div>
             <div class="form-group">
               <label for="initial">Enter Your Initial Deposit: </label>
-              <input type="number" min=10000 placeholder="Give us your money" id="initial" class = "form-control">
+              <input type="number" min=10000 max=1000000000000000 placeholder="Give us your money" id="initial" class = "form-control">
             </div>
-            <button type="submit" class="btn btn-danger">Give it to Us</button>
+            <button id="create" type="submit" class="btn btn-danger">Give it to Us</button>
           </form>
         </div>
         <div class="col-md-6">
           <form id="exchange">
             <div class="form-group">
               <label for="deposit">Enter Deposit Amount:</label>
-              <input type="number" class="form-control" placeholder="Deposit Amount" id="deposit">
+              <input type="number" class="form-control" placeholder="Deposit Amount" max=100000000 min=1000 id="deposit">
             </div>
             <div class="form-group">
               <label for="withdrawal">Enter Withdrawal Amount:</label>
-              <input type="number" class="form-control" placeholder="Withdrawal Amount" id="withdraw">
+              <input type="number" class="form-control" placeholder="Withdrawal Amount" id="withdraw" min=0>
             </div>
             <button type="submit" class="btn btn-warning" name="button">Please Give Us More</button>
           </form>
         </div>
+      </div>
+      <div class="row" id="row2">
+        <div class="col-md-6">
+          <div id="yourinfo">
+            <h3>Account Information</h3>
+            <p>Name: <span id="account-info"></span></p>
+            <p>
+              Account Number: <span id="number"></span>
+            </p>
+          </div>
 
 
+        </div>
+
+        <div class="col-md-6">
+          <div id="balance" >
+            <h3>Current Balance:</h3>
+            <p>$<span id="balance-output"></span>.00</p>
+
+          </div>
+          <button type="text" class="btn btn-success" name="button" id="check">Show Account Information</button>
+        </div>
+
       </div>
-      <div id="balance">
-        <h4>Current Balance:</h4>
-        <span id="balance-output"></span>
-      </div>
+
 
 
     </div>
